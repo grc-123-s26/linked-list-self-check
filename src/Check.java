@@ -12,6 +12,33 @@ public class Check {
      * @return "even", "odd", or "equal" depending on whether there are more even or odd values
      */
     public static String evenOdd(ListNode head) {
-        return null;
+        int odd = 0;
+        int even = 0;
+
+        ListNode current = head;
+
+        while(current != null) {
+            if(current.data % 2 == 0) {
+                even++;
+            }
+
+            else {
+                odd++;
+            }
+
+            current = current.next;
+        }
+
+        if(even > odd) {
+            return "even";
+        }
+
+        if(odd > even) {
+            return "odd";
+        }
+
+        else{
+            return "equal";
+        }
     }
 }
