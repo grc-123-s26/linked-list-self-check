@@ -18,17 +18,25 @@ public class Check {
         ListNode current = head;
         int evenCount = 0;
         int oddCount = 0;
-        
+        int remainder = 0;
+
+        //only runs if there only one node
         if (current.next == null) {
-            if (current)
+            remainder = current.data % 2;     
+            if (remainder > 0) {
+                return "odd";
+            } else {
+                return "even";
+            }       
         }
 
-        while (current.next != null) {
-            int remainder = current.data % 2;
+        //runs when it's a normal link list
+        while (current != null) {
+            remainder = current.data % 2;
             if (remainder > 0) {
-            oddCount++;
+                oddCount++;
             } else {
-            evenCount++;
+                evenCount++;
             }
             current = current.next;
         }
@@ -40,6 +48,5 @@ public class Check {
             return "even";
         }
         return "equal";
-
     }
 }
