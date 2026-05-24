@@ -17,7 +17,7 @@ public class Check {
         ListNode current = head;
 
         while(current != null){
-            if(current.data %2 = 0){
+            if(current.data %2 == 0){
                 evenC++;
             }
             else{
@@ -26,7 +26,7 @@ public class Check {
             current = current.next;
         }
 
-        if(enenC > oddc){
+        if(evenC > oddC){
             return "even";
         }
 
