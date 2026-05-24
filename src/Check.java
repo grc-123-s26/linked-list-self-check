@@ -30,8 +30,11 @@ public class Check {
             return "even";
         }
 
-        else{
+        else if(oddC > evenC){
             return "odd"; 
+        }
+        else{
+            return "equal"; 
         }
 
     }
