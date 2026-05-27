@@ -12,6 +12,26 @@ public class Check {
      * @return "even", "odd", or "equal" depending on whether there are more even or odd values
      */
     public static String evenOdd(ListNode head) {
-        return null;
+        //Count of even and odd nodes respectively
+        int[] evenOddCount = {0, 0};
+        ListNode current = head;
+
+        while (current != null){
+            int value = current.data;
+            if (value % 2 == 0) {
+                evenOddCount[0]++;
+            } else {
+                evenOddCount[1]++;
+            }
+            current = current.next;
+        }
+
+        if (evenOddCount[0] > evenOddCount[1]) {
+            return "even";
+        } else if (evenOddCount[0] < evenOddCount[1]) {
+            return "odd";
+        }
+
+        return "equal";
     }
 }
